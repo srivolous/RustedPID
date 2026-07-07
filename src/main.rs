@@ -31,10 +31,12 @@ impl PID{
 }
 fn main() {
     //let aa = Local::now();
-    let mut n = PID::new(0.1,0.01,0.0);
-    std::thread::sleep(std::time::Duration::from_millis(10));
+    let mut P = 0.1;
+    let mut I = P/10;
+    let mut D = 0.0;
+    let mut altcontrol = PID::new(&P,&I,&D);
+    let mut rollcontrol = PID::new(&P,&I,&D)
+    //std::thread::sleep(std::time::Duration::from_millis(10));
     let ree = n.calculate(2.0,5.0);
-    //println!("is reading {}",ree);
-    let a = Local::now();
-    //println!("local time {}",(a-aa).num_seconds());
+   // let a = Local::now();
 }
